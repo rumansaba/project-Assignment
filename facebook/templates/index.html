@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth2 Login Example</title>
+</head>
+<body>
+    {% if user %}
+        <h1>Hello, {{ user.name }}!</h1>
+        <p>Email: {{ user.email }}</p>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+        <h1>Welcome!</h1>
+        <p>Please <a href="{{ url_for('login') }}">login with Google or Facebook</a>.</p>
+    {% endif %}
+</body>
+</html>

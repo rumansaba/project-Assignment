@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data Display</title>
+</head>
+<body>
+    <h1>API Data Display</h1>
+    <ul>
+        {% for post in posts %}
+            <li>
+                <strong>Title:</strong> {{ post.title }}<br>
+                <strong>Body:</strong> {{ post.body }}
+                <hr>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

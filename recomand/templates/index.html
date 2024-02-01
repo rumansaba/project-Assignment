@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content-Based Recommendation System</title>
+</head>
+<body>
+    <h1>Available Items</h1>
+    <form action="/recommend" method="post">
+        <label>Filter by Category:</label>
+        <input type="checkbox" name="category" value="Category A"> Category A
+        <input type="checkbox" name="category" value="Category B"> Category B
+        <input type="checkbox" name="category" value="Category C"> Category C
+        <br>
+        <button type="submit">Recommend Items</button>
+    </form>
+    <h2>Items:</h2>
+    <ul>
+        {% for item_id, item_data in items.items() %}
+            <li>{{ item_data.name }} - Category: {{ item_data.category }} - Price: ${{ item_data.price }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
